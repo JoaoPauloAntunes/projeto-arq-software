@@ -1,0 +1,59 @@
+Objetivo: apresentação sobre o tema "Arquitetura de software microserviços"
+Nesta apresentação deve conter:
+*Vantagens e Desvantagens dessa arquitetura
+*Exemplos de empresas ou projetos que usam esta arquitetura
+*Tipos de plataformas que custumam usar esta arquitetura
+*Apresentação de um pequeno projeto com esta arquitetura
+
+*13/04 Apresentação dos trabalhos
+De 20 a 30 minutos por apresentação
+
+Grupo (até 4 pessoas):
+- João		PC3001393
+- Vitor		PC
+- Rafael	PC
+
+------------------------------------------------------------
+*Vantagens:
+- Desenvolvimento distribuido (em paralelo), o que permite maior velocidade.
+
+- Altamente escalável: permite crescer rápido sem perder tempo em ter que reinventar a roda
+
+- Resiliente (robusto): os serviços são independentes, assim um pode falhar que não afeta os outros.
+
+- Implementação mais fácil: como os microserviços são muito modulares, a responsabilidade de cada um é limitada, o que resulta em um código de fácil implementação.
+
+- Acessível: Por conta da modularidade dos microserviços, cada módulo é mais facilmente observado e, portanto, compreendido em seu todo sem maior esforço.
+
+- Uso de diferentes linguagens, podendo usar a ideal para cada tipo de microserviço: devido a separação rígida dos módulos é possível implementar cada microserviço com a linguagem mais adequada para a responsabilidade dele.
+
+------------------------------------------------------------
+*Desvantagens:
+- Migração: pode ser difícil a mudança de uma aplicação para o uso da arquitetura de microserviços devido a necessidade da separação total dos módulos. Cada equipe de programadores terá de se limitar ao desenvolvimento de um único microserviço específico.
+
+- Compilação: o processo de compilar um microserviço específico pode resultar na necessidade da compilação de outros módulos, o que pode ser um problema dependendo do tempo de compilação.
+
+- Como cada microservice geralmente tem sua própria base de dados, o gerenciamento de transação se torna mais difícil (múltiplas bases de dados)
+
+- Dificuldade em implantar e operar sistemas distribuídos
+
+------------------------------------------------------------
+*Exemplos de empresas / projetos que usam esta arquitetura:
+- Netflix
+- Microsoft Azure
+- Spotify
+
+------------------------------------------------------------
+*Quais tipos de plataformas costuma usar esta arquitetura:
+- aplicações nativas em cloud.
+- plicação de tecnologias de desenvolvimento ágil
+
+=============================================================
+*Projeto:
+*Arquitetura de software: Microserviços
+*Nome: 
+*Microserviços:
+- Clientes
+- Produtos
+- Pagamentos
+- Pesquisa de produtos
