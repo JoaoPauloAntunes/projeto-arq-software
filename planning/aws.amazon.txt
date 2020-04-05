@@ -1,0 +1,38 @@
+* monolitico X microserviços
+	* monolítico
+		* desvantagens
+			* processos altamente acoplados e executam como um único serviço: se um processo do aplicativo apresentar um pico de demanda, toda a arquitetura deverá ser escalada.
+			* conforme o código cresce, fica mais difícl adicionar coisas ou modificar
+			* aumenta o risco de disponibilidade de aplicativos, pois muitos processos depedentes e altamente acoplados aumentam o impacto da falha de um único processo
+	* microserviços
+		* comunicação entre microserviços é feita na maior parte em um Gateway de API com chamadas HTTP
+		* vantagens
+			* cada serviço realiza um única função e são independentes: podem ser implementados, atualizados ou escalados para atender uma demanda de função específica de um aplicativo sem afetar o funcionamento de outros microserviços
+			* não precisam compartilhar nenhum código ou implementação com os outros serviços
+			* especificidade: cada microserviço é projetado para ter um conjunto de recursos e é dedicado à solução de um problema específico, conforme a complexidade de um microserviço aumenta, ele pode ser dividido em microserviços menores 
+			* agilidade: como cada microserviço faz uma funcionalidade específica e independente, eles podem ser desenvolvidos por várias equipes, enquanto uma equipe está trabalhando em uma funcionalidade, a outra está trabalhando com outra funcionalidade de forma independente
+			* escalabilidade flexível: os microserviços permitem que cada serviço seja escalado de forma independente para atender à demanda do recurso de aplicativo oferecido por esse serviço, permitindo dimensionar corretamente as necessidades de infraestrutura, medir com precisão o custo de um recurso e manter a disponibilidade quando um serviço experimenta um pico de demanda
+			* fácil implementação: permite integração e entrega contínua, facilitando testes de novas ideias e reversão caso algo não funcione corretamente. O baixo custo de falha permite a experimentação, facilita a atualização do código e acelera o tempo de introdução de novos recursos no mercado
+			* liberdade tecnológica: pode-se optar por várias tecnologias para resolver problemas específicos, um microserviço pode ser feito em Python, outro em Javascript, a aplicação não se prende a uma única tecnologia!
+			* reutilização de código: um microserviço criado para uma determinada função pode ser usado como componente básico para outro recurso, permitindo criação de recursos sem precisar escrever código
+			* resiliência: a independência do serviço aumenta a resiliência a falhas do aplicativo, pois os outros microserviços do aplicativo continuam funcionando sem interromper todo o aplicativo
+		*desvantagens
+			*precisa entender quando e como utilizar os processos que serão necessários para o deploy (disponibilidade para uso; git push), integrações e, principalmente, na solução de erros críticos
+			* requer boa gestão e orquestração dos microserviços, previnindo a complexidade da aplicação
+			* latência: como a comunicação entre microserviços é feita na maior parte em um Gateway de API com chamadas HTTP, pode havae chamadas de microserviços por outros microserviços, pode haver latência e congestão de redes 
+			* mais armazenamento de dados: dificuldade para gerenciar o aumento de informações geradas pelos microserviços por causa da natureza de microserviços de terem os dados sendo gerados independentes entre si
+		* recomendação
+			* serviços devem ser modelados em torno de domínios da empresa
+			* descentralizar o poder: equipes autônomas e individuais trabalham melhor na tarefa de projetar e criar serviços
+			* armazenamento de dados privado: apenas o microserviço proprietário do dado pode ter acesso (em microserviços, cada microserviços tem sua base de dados e apenas ele deve ter acesso a ela). O microserviço proprietário de uma base dado deve ser intermediário de requisições
+			* evitar vazamento de detalhes de implementação, pois os serviços se comunicam via APIs
+			* evitar aclopamento entre os serviços: não criar esquemas de banco de dados compartilhados e rigidez na comunicação entre os microserviços
+			* Gateway cuidará dos detalhes gerais como autentificação, comunicação SSL e outros detalhes abrangentes
+			* Deixe o conhecimento de domínio fora do Gateway, ele irá apenas tratar e rotear as solicitações sem ter qualquer conhecimento de regras de negócios ou da lógica do domínio, ele não deve se tornar uma dependência do projeto
+			* acoplamento flexível e alta coesão adicional: usar injeção de dependência e fazer classes com responsabilidades únicas é muito importante, pois pode afetar no tempo de comunicação entre serviços (a comunicação deve ser mais o mais rápido possível)
+			* estratégias de resiliência: evitar falhas em cascata isolando as falhas e usando padrões de resiliência (capacidade de se recobrar facilmente ou se adaptar as falhas)
+			* ter uma boa gestão e manter o sistema muito bem documentado
+		* exemplo: Amazon Web Services (AWS)
+
+* dicionário do programador
+	* API: Application Program Interface (Interface de Programação de Aplicações), é uma interface entre aplicativo e programação. Permite que um sistema use as funcionalidades de outro sistema de forma programática; comunicação entre sistemas compartilhando suas ações, ferramentas, padrões e protocolos, gerando uma conversa de sistema para sistema

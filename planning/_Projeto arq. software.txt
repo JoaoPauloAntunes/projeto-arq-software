@@ -46,7 +46,7 @@ Grupo (até 4 pessoas):
 ------------------------------------------------------------
 *Quais tipos de plataformas costuma usar esta arquitetura:
 - aplicações nativas em cloud.
-- plicação de tecnologias de desenvolvimento ágil
+- aplicações de tecnologias de desenvolvimento ágil
 
 =============================================================
 *Projeto:

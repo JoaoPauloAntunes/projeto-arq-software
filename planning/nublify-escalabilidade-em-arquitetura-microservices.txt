@@ -1,0 +1,5 @@
+* https://www.nublify.com/blog/nublify-escalabilidade-em-arquitetura-microservices
+* aplicação monolitica
+	* escalabilidade vertical: escalamento uma única instância da aplicação que contém toda a aplicação. Necessita melhorar o hardware da máquina conforme aumenta a exigÊncia
+* aplicação microserviços
+	* escalabilidade horizontal: escalamento de várias instâncias da aplicação. Pode ser realizada em várias máquinas sem necessitar de um bom hardware (união fazendo a força). É escalado apenas o microserviço que a aplicação necessita ao invés de escalar a aplicação inteira
